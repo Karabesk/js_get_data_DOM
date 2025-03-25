@@ -9,8 +9,11 @@ let sumPopulations = 0;
 
 allPopulations.forEach((population) => {
   const clearPopulation = population.replaceAll(',', '');
+  const numPopulation = Number(clearPopulation);
 
-  sumPopulations += +clearPopulation;
+  if (!isNaN(numPopulation)) {
+    sumPopulations += numPopulation;
+  }
 });
 
 const averagePopulation = Math.trunc(sumPopulations / lengthPopulation);
